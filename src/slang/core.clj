@@ -84,7 +84,7 @@
       (throw (Exception. (format "Slang Syntax Error @ %s (%s) :: Invoke expects a function, and an integer arity" invoke (get context :n)))))
     `(let [stack# ~(interpret (rest body) stack)]
        (if (< (count stack#) ~arity)
-         (throw (Exception. (format "Arity mismatch @ %s (%s) :: Function needed %s args, but stack only had %s values"
+         (throw (ArityException. (format "Arity mismatch @ %s (%s) :: Function needed %s args, but stack only had %s values"
                                     (quote ~(first body))
                                     ~(get context :n)
                                     ~arity
