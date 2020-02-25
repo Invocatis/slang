@@ -81,10 +81,6 @@
 
     (invoke> gcd 2)))
 
-(defn other
-  [from to]
-  (first (clojure.set/difference #{0 1 2} #{from to})))
-
 (defstackfn -hanoi
   [!state !from !to !n]
 
